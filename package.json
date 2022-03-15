@@ -1,15 +1,30 @@
 {
   "name": "gaia-seeder",
-  "version": "alpha 0.0.1",
+  "version": "0.0.1-alpha",
   "description": "",
   "main": "bin/cli.js",
   "bin": {
     "gaia": "bin/cli.js"
   },
   "scripts": {
-    "dev": "node ./bin/cli.js"
+    "dev": "nodemon --exec babel-node ./src/cli.js",
+    "build": "babel src --out-dir bin"
   },
   "keywords": [],
   "author": "Franco Morales",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "commander": "^9.0.0",
+    "figlet": "^1.5.2"
+  }
 }

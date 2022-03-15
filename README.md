@@ -23,10 +23,10 @@
             <a href="#instalacion">Instalación</a>
         </li>
         <li>
-            <a href="#modo-de-uso">Modo de uso</a>
+            <a href="#cli">CLI</a>
         </li>
         <li>
-            <a href="#colaboradores">Colaboradores</a>
+            <a href="#json">JSON</a>
         </li>
         <li>
             <a href="#creditos">Creditos</a>
@@ -62,10 +62,46 @@ npm install
 
 <!-- cli -->
 ## CLI 
-* Abrir una consola y escribir el siguiente comando en la consola del proyecto
+Lista de comandos disponibles :
+
+*  `terraform` :
+Inicia el proceso de 'seeding'. Argumentos del comando : 
+    * json_path_file : Obligatorio, ruta del archivo .json con la estructura a generar.
+    * fileName : Opcional, nombre del archivo que guardará los datos creados, valor por defecto `mockdata`.
+    * options : Opcional, 
+        * `--time` o `-t`, muestra el tiempo de ejecución del comando.
+
+Ejemplo
+
 ```cmd
-node bin/cli gaia
+node bin/cli terraform ruta/directorio/test.json mockdataTest -t
 ```
+
+<!-- Formato json-->
+## JSON
+
+El formato del archivo `.json` sugerido es el siguiente : 
+
+Modelo de ejemplo : 
+
+```json
+[
+    {
+        "type": {
+            "username": "internet.userName",
+            "avatar": "internet.avatar",
+            "email":"internet.email"
+        },
+        "collection": "users", 
+        "quantity": 5
+    }
+]
+```
+
+* type : representa cada propiedad del objeto, donde el value ("categoria.subcategoria") son nombres de funciones propias de `@faker-js/faker`.
+* collection : representa el nombre de la colección.
+* quantity : representa la cantidad de elementos de esa colección.
+
 
 <!-- Creditos -->
 ## Creditos
